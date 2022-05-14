@@ -19,4 +19,4 @@ jobs:
     - uses: actions/checkout@master
     
     - name: Run cron
-      run: echo 'hello 123'
+      run: docker run --rm xx
