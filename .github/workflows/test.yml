@@ -1,0 +1,22 @@
+name: test self-host
+
+on:
+  workflow_dispatch:
+    inputs:
+      token:
+        description: 'secret token'
+        required: true
+
+#concurrency: 
+#  group: ${{ github.workflow }}-${{ github.ref }}
+#  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    timeout-minutes: 360
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Run cron
+      run: echo 'hello 123'
